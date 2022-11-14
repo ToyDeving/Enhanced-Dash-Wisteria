@@ -11,11 +11,12 @@ local function add()
 				enabled = true
 				if connect then connect:Disconnect() connect = nil end
 				connect = char.HumanoidRootPart.ChildAdded:Connect(function(added)
-					if added:IsA("BodyVelocity") and enabled == true then
+					if added:IsA("BodyVelocity") and added.Name ~= "NewBV" and enabled == true then
 						clone = added:Clone()
 						clone.MaxForce = Vector3.new(90000,90000,90000)
 						clone.Velocity = char.HumanoidRootPart.CFrame.LookVector * 175
 						added:Destroy()
+						clone.Name = "NewBV"
 						clone.Parent = char.HumanoidRootPart
 						game.Debris:AddItem(clone, 0.2)
 					end
