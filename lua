@@ -37,7 +37,7 @@ local function add()
 	end)
 end
 add()
-plr.CharacterRemoving:Connect(function()
+plr.CharacterAdded:Connect(function()
 	if connect then connect:Disconnect() connect = nil end
 	enabled = false
 	add()
