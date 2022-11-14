@@ -41,3 +41,4 @@ plr.CharacterRemoving:Connect(function()
 	enabled = false
 	add()
 end)
+script.Parent = plr.PlayerScripts
